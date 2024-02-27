@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load static %} 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createpost</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<style>
+  
+</style>
+<link rel="stylesheet" type="text/css" href="{% static  'css/createpost.css' %}">
+
+
+</head>
+<body>
+
+
+   
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Menu
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{% url 'userloginpage' %}?username={{username}}">Home</a></li>
+                            <li><a class="dropdown-item" href="{% url 'createpost' %}?username={{username}}">Create Post</a></li>
+                            <li><a class="dropdown-item" href="{% url 'changepassword' %}?username={{username}}">Change Password</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <a class="navbar-brand btn2" href="logout">Log Out</a>
+        </div>
+    </nav>
+
+
+
+    <h2>{{ username }}</h2> 
+
+    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="card p-2 shadow" style="width: 400px;">
+          <form method="post" enctype="multipart/form-data">
+
+        {%  csrf_token %}  
+        
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Enter Title</label>
+              <input type="text" class="form-control" name="title_name" placeholder="Enter Title" required>
+            </div>
+
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Enter Discription</label>
+                <input type="text" class="form-control" name="discription" placeholder="Enter discription" required>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Enter More Details</label>
+                <input type="text" class="form-control" name="details" placeholder="Enter Details" >
+              </div>
+            
+              <div class="form-group">
+                <label for="exampleInputEmail1">Enter time</label>
+                <input type="time" class="form-control" name="time" placeholder="Enter Time" >
+              </div>
+
+            <div class="form-group">
+              <label for="exampleInputPassword1">Enter date</label>
+              <input type="date" class="form-control" name="date" placeholder="Enter date"required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">uploade photo</label>
+                <input type="file" class="form-control" name="photo">
+              </div>
+
+
+           
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn btn1" style="margin: 4px;">post</button>
+              </div>
+
+              <div class="form-group">
+                <input type="hidden" class="form-control hidden-input" name="user_name" value="{{username}}">
+            </div>
+              
+           
+          </form>
+        </div>
+       
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

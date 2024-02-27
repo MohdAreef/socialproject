@@ -1,0 +1,11 @@
+.btn1:hover
+{
+    background-color: aqua;
+    border-radius: 5px;
+}
+.btn2:hover
+{
+    background-color: aqua;
+    border-radius: 5px;
+    padding: 5px;
+}

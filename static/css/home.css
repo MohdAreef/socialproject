@@ -1,0 +1,57 @@
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.btn1:hover {
+    background-color: violet;
+    /* Change to desired hover color */
+    border-color: #007bff;
+}
+
+.btn2:hover {
+    background-color: violet;
+    /* Change to desired hover color */
+    border-color: #007bff;
+}
+
+.btn3:hover {
+    background-color: violet;
+    /* Change to desired hover color */
+    border-color: #007bff;
+    border-radius: 5px;
+}
+
+.currentevents {
+    /* padding: 20px; */
+    margin: 20px;
+
+}
+
+.card {
+    margin: 10px;
+}
+
+.container {
+    width: 100%;
+    padding: 0;
+
+}
+
+.main {
+   
+    width: 100%;
+
+}
+
+
+
+.content {
+    margin: 5px;
+
+}
+.event-content
+{
+    border-radius: 10px;
+}
